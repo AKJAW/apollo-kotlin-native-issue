@@ -7,4 +7,4 @@ shared/src/commonMain/graphql/launchesPast.graphql
 shared/src/commonTest/kotlin/co/touchlab/kampkit/graphql
 
 ## GitHub Issue
-TODO
+https://github.com/apollographql/apollo-kotlin/issues/3977
