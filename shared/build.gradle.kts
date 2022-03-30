@@ -4,6 +4,12 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("com.squareup.sqldelight")
+    id("com.apollographql.apollo3").version("3.2.0")
+}
+
+apollo {
+    packageName.set("co.touchlab.kampkit")
+    srcDir("src/commonMain/graphql")
 }
 
 android {
@@ -64,6 +70,7 @@ kotlin {
                 implementation(libs.multiplatformSettings.common)
                 implementation(libs.kotlinx.dateTime)
                 api(libs.touchlab.kermit)
+                implementation("com.apollographql.apollo3:apollo-runtime:3.2.0")
             }
         }
         val commonTest by getting {
@@ -73,6 +80,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                implementation(libs.coroutines.test)
                 implementation(libs.sqlDelight.android)
                 implementation(libs.ktor.client.okHttp)
             }
